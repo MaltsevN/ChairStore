@@ -1,0 +1,15 @@
+﻿@using WebUI.Models
+@using WebUI.HtmlHelpers
+@model ChairsListViewModel
+
+@{
+    ViewBag.Title = "Items";
+}
+@foreach (var p in @Model.Chairs)
+{
+    @Html.Partial("ChairSummary", p)
+}
+
+<div class="btn-group pull-right">
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x, category = Model.CurrentCategory}))
+</div>
