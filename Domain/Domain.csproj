@@ -80,6 +80,7 @@
     <Compile Include="Abstract\IChairRepository.cs" />
     <Compile Include="Concrete\EFChairRepository.cs" />
     <Compile Include="Concrete\EFDBContext.cs" />
+    <Compile Include="Entities\Cart.cs" />
     <Compile Include="Entities\Chair.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
