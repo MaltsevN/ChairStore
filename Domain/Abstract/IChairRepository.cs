@@ -10,5 +10,6 @@ namespace Domain.Abstract
     public interface IChairRepository
     {
         IEnumerable<Chair> Chairs { get; }
+        void SaveChair(Chair chair);
     }
 }

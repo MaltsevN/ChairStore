@@ -19,5 +19,22 @@ namespace Domain.Concrete
                 return context.Chairs;
             }
         }
+        public void SaveChair(Chair chair)
+        {
+            if (chair.ChairId == 0)
+                context.Chairs.Add(chair);
+            else
+            {
+                Chair dbEntry = context.Chairs.Find(chair.ChairId);
+                if (dbEntry != null)
+                {
+                    dbEntry.Name = chair.Name;
+                    dbEntry.Description = chair.Description;
+                    dbEntry.Price = chair.Price;
+                    dbEntry.Category = chair.Category;
+                }
+            }
+            context.SaveChanges();
+        }
     }
 }
