@@ -36,5 +36,15 @@ namespace Domain.Concrete
             }
             context.SaveChanges();
         }
+        public Chair DeleteChair(int chairId)
+        {
+            Chair dbEntry = context.Chairs.Find(chairId);
+            if(dbEntry != null)
+            {
+                context.Chairs.Remove(dbEntry);
+                context.SaveChanges();
+            }
+            return dbEntry;
+        }
     }
 }

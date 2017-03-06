@@ -11,5 +11,6 @@ namespace Domain.Abstract
     {
         IEnumerable<Chair> Chairs { get; }
         void SaveChair(Chair chair);
+        Chair DeleteChair(int chairId);
     }
 }
