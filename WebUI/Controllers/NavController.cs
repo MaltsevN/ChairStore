@@ -18,11 +18,12 @@ namespace WebUI.Controllers
         public PartialViewResult Menu(string category = null)
         {
             ViewBag.SelectedCategory = category;
+
             IEnumerable<string> categories = repository.Chairs
                 .Select(chair => chair.Category)
                 .Distinct()
                 .OrderBy(x => x);
-            return PartialView(categories);
+            return PartialView("FlexMenu", categories);
         }
     }
 }
