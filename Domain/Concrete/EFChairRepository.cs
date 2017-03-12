@@ -32,6 +32,8 @@ namespace Domain.Concrete
                     dbEntry.Description = chair.Description;
                     dbEntry.Price = chair.Price;
                     dbEntry.Category = chair.Category;
+                    dbEntry.ImageData = chair.ImageData;
+                    dbEntry.ImageMimeType = chair.ImageMimeType;
                 }
             }
             context.SaveChanges();

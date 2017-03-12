@@ -39,5 +39,19 @@ namespace WebUI.Controllers
             };
             return View(model);
         }
+        public FileContentResult GetImage(int chairId)
+        {
+            Chair chair = repository.Chairs.FirstOrDefault(
+                ch => ch.ChairId == chairId);
+            if (chair != null)
+            {
+                return File(chair.ImageData, chair.ImageMimeType);
+            }
+            else
+            {
+                return null;
+            }
+              
+        }
     }
 }
